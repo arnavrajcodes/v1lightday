@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Voyager 1 · One light-day from home</title>
+<meta name="description" content="Ride Voyager 1 out through the solar system to one light-day from Earth, November 18, 2026.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="gl" aria-label="3D solar system with Voyager 1 far beyond the planets"></canvas>
+<p class="nogl" id="nogl" hidden>This experience needs WebGL. Try a recent version of Chrome, Edge, Safari or Firefox.</p>
+
+<header class="top ui"><div class="odo"><small>Distance from Earth, approx.</small><b id="odo">—</b><em>km</em></div></header>
+
+<main class="hero ui">
+  <p class="kick" id="kick">Reaching one light-day from Earth in</p>
+  <div class="clock" role="timer"><div><b id="h">00</b><span>hours</span></div><i>:</i><div><b id="m">00</b><span>minutes</span></div><i>:</i><div><b id="s">00</b><span>seconds</span></div></div>
+  </main>
+
+<div id="flyc" class="flyc" aria-live="polite"></div>
+<div id="labs"></div>
+
+<section class="console ui">
+  <p class="ph" id="ph"></p>
+  <form id="f" autocomplete="off"><label class="sr" for="msg">Message to Voyager 1</label><input id="msg" maxlength="70" placeholder="Send Voyager 1 a message…"><button class="btn">Send at light speed</button></form>
+  <div class="tools" id="tools"></div>
+  <ul class="fl" id="fl"></ul>
+</section>
+
+<div class="tick ui" aria-label="Milestone time around the world"><div id="mq"></div></div>
+<aside class="credit ui" aria-label="Credits"><span class="cb tl"></span><span class="cb br"></span>
+  <p class="cl"><i class="dot"></i>Transmission · origin Earth<span class="bars" aria-hidden="true"><b></b><b></b><b></b><b></b></span></p>
+  <p class="ct">A tribute to Voyager 1</p>
+  <p class="cn">from <b>Arnav Rajpurohit</b></p>
+</aside>
+<button class="skip" id="skip" type="button">Skip flight</button>
+
+<div id="fx" class="fx" hidden><div class="fxb"><p class="d">November 18, 2026</p><h2 id="ft">One light-day.</h2><hr><p>Voyager 1 is now 24 light-hours from Earth.<br>Say hello today. It hears you tomorrow.</p><button class="btn" id="fxc" type="button">Keep watching</button></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
